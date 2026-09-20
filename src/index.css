@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --accent-glow: #38bdf8;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050508;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-signature {
+  font-family: 'Great Vibes', 'Sacramento', cursive;
+}
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Hollow/Outline Typography Styles for AIMA SALEHEEN */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.75);
+  transition: all 0.3s ease;
+}
+
+.text-outline:hover {
+  -webkit-text-stroke: 1.5px #38bdf8;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.45);
+}
+
+.text-outline-cyan {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #38bdf8;
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.text-outline-thick {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(13, 14, 22, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 20, 32, 0.75);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 30px -10px rgba(56, 189, 248, 0.12);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle background grain noise */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cyber grid pattern */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active input,
+  body.custom-cursor-active [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* ==========================================================================
+   CV Print Stylesheet (@media print)
+   Hides non-CV elements (top action bar, navigation, close button, buttons)
+   Ensures only the pristine CV document is printed or saved as PDF
+   ========================================================================== */
+@media print {
+  /* Hide all non-CV elements on the page */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Explicitly hide non-CV UI components from layout flow */
+  header,
+  nav,
+  footer,
+  aside,
+  button,
+  .no-print,
+  #cv-action-bar,
+  .cv-action-bar,
+  #cv-close-button,
+  #cv-print-button,
+  #cv-download-button,
+  .custom-cursor,
+  canvas,
+  #tech-sphere-canvas,
+  .bg-grain,
+  .bg-cyber-grid {
+    display: none !important;
+  }
+
+  /* Reset document viewport & background for print */
+  html,
+  body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+  }
+
+  /* Unset modal backdrop and fixed positioning so CV flows cleanly across pages */
+  #cv-modal-backdrop,
+  .cv-modal-backdrop {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  #cv-modal-container,
+  .cv-modal-container {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    max-height: none !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Make CV document content and all descendants visible */
+  #cv-document-content,
+  #cv-document-content * {
+    visibility: visible !important;
+  }
+
+  /* Clean printable CV document styling */
+  #cv-document-content,
+  .cv-document-content {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18mm 16mm !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Print typography and contrast enhancements */
+  #cv-document-content h1,
+  #cv-document-content h2,
+  #cv-document-content h3,
+  #cv-document-content h4 {
+    color: #090d16 !important;
+  }
+
+  #cv-document-content p,
+  #cv-document-content span,
+  #cv-document-content li,
+  #cv-document-content div {
+    color: #334155 !important;
+  }
+
+  #cv-document-content .text-white {
+    color: #090d16 !important;
+  }
+
+  #cv-document-content .text-slate-200,
+  #cv-document-content .text-slate-300,
+  #cv-document-content .text-slate-400 {
+    color: #334155 !important;
+  }
+
+  #cv-document-content .text-sky-400,
+  #cv-document-content .text-sky-300,
+  #cv-document-content [class*="text-sky-"] {
+    color: #0284c7 !important;
+  }
+
+  /* Cards, borders & backgrounds inside CV */
+  #cv-document-content .border-b,
+  #cv-document-content .border-t {
+    border-color: #e2e8f0 !important;
+  }
+
+  #cv-document-content .bg-white\/\[0\.02\],
+  #cv-document-content .bg-sky-500\/\[0\.04\],
+  #cv-document-content .bg-sky-500\/10,
+  #cv-document-content [class*="bg-white\/"] {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  #cv-document-content .border-white\/10,
+  #cv-document-content .border-white\/5,
+  #cv-document-content .border-sky-400\/25,
+  #cv-document-content [class*="border-white"],
+  #cv-document-content [class*="border-sky"] {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Suppress automatic link annotations on URLs */
+  #cv-document-content a {
+    text-decoration: none !important;
+    color: #0284c7 !important;
+  }
+
+  #cv-document-content a[href]:after {
+    content: "" !important;
+  }
+
+  /* Avoid awkward page break cuts inside role cards and education blocks */
+  #cv-document-content .p-4,
+  #cv-document-content .p-3,
+  #cv-document-content li,
+  #cv-document-content .space-y-3,
+  #cv-document-content .space-y-4 {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+}
+

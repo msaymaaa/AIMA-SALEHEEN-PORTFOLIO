@@ -1,0 +1,171 @@
+import type { Project } from '../types';
+
+export const projects: Project[] = [
+  {
+    id: 'highway-havoc',
+    slug: 'highway-havoc',
+    number: '01',
+    title: 'Highway Havoc',
+    shortDescription: 'Interactive browser-based highway racing game featuring real-time vehicle movement, traffic systems, collision detection, missions, progression, and game-state management.',
+    category: 'Systems & Games',
+    year: '2024',
+    problem: 'Browser games often suffer from imprecise collision math, clunky state resets, and poor responsive scaling on high-refresh-rate displays.',
+    targetUser: 'Gaming enthusiasts, web developers seeking low-latency game loops, and interactive web audiences.',
+    role: 'Lead Developer — Game engine loop, physics mechanics, collision detection, and UI/UX state management.',
+    tools: ['JavaScript', 'React', 'Vite', 'HTML5 Canvas', 'Tailwind CSS'],
+    importantFeatures: [
+      'Real-time vehicle movement and responsive keyboard/touch control steering',
+      'Dynamic multi-lane algorithmic traffic generation and progressive speed difficulty',
+      'Pixel-perfect bounding box collision detection and audio-visual impact feedback',
+      'Pause, resume, high-score tracking, vehicle selection, and mission progression state management'
+    ],
+    architecture: 'Single-thread optimized requestAnimationFrame game loop with decoupled physics simulation step, immutable game state dispatchers, and hardware-accelerated canvas/DOM compositing.',
+    result: 'Delivers a smooth 60+ FPS responsive gameplay experience deployed globally with zero external heavy game engine overhead.',
+    challenges: 'Balancing deterministic frame delta timing across varying device refresh rates while maintaining fluid physics and collision accuracy.',
+    liveUrl: 'https://highway-havoc.vercel.app/',
+    githubUrl: 'https://github.com/msaymaaa',
+    statusText: 'Live Deployment'
+  },
+  {
+    id: 'mentornexus',
+    slug: 'mentornexus',
+    number: '02',
+    title: 'MentorNexus',
+    shortDescription: 'Mentorship Network Management Platform connecting academic and career mentees with verified industry professionals.',
+    category: 'Full-Stack',
+    year: '2024',
+    problem: 'Students and early-career developers struggle with unstructured 1-on-1 mentorship, disorganized scheduling, and fragmented communication.',
+    targetUser: 'University students, software engineering mentees, and technical industry mentors.',
+    role: 'Full-Stack Developer — UI component architecture, database schemas, and API integration.',
+    tools: ['React', 'Supabase', 'PostgreSQL', 'TypeScript', 'Tailwind CSS'],
+    importantFeatures: [
+      'Designed user interface components and responsive dashboards for mentee and mentor portals',
+      'Engineered relational database tables and secure Row-Level Security (RLS) policies in Supabase',
+      'API integrations for managing mentorship network workflows, appointment agendas, and status tracking',
+      'Structured milestone checkpoints and verified peer recommendations'
+    ],
+    architecture: 'React client architecture backed by Supabase BaaS, utilizing PostgreSQL stored procedures, typed client queries, and real-time database subscription hooks.',
+    result: 'Streamlines mentor discovery, agenda coordination, and progress tracking in a unified glassmorphic portal.',
+    challenges: 'Designing flexible relational schemas to support complex multi-party session states and calendar availability windows.',
+    liveUrl: 'https://mentornexus-live-2026.vercel.app/',
+    githubUrl: 'https://github.com/msaymaaa',
+    statusText: 'Live Deployment'
+  },
+  {
+    id: 'cvforge',
+    slug: 'cvforge',
+    number: '03',
+    title: 'CVForge',
+    shortDescription: 'Interactive web-based resume builder enabling users to create, customize, preview, and print professional CVs through an interactive editing workflow.',
+    category: 'Application',
+    year: '2024',
+    problem: 'Generic resume builders impose rigid paywalls, disrupt layout formatting during export, and lack real-time visual feedback.',
+    targetUser: 'Job seekers, university graduates, and software engineers tailoring application documents.',
+    role: 'Frontend Architect — Real-time editing state engine, typography styling, and A4 print rendering.',
+    tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React', 'Local Storage API'],
+    importantFeatures: [
+      'Real-time resume editing with live synchronized side-by-side A4 document preview',
+      'Structured modular form sections for Experience, Education, Projects, Skills, and Certifications',
+      'Persistent local storage to ensure zero data loss during drafting sessions without mandatory login',
+      'Multiple visual typographic themes and high-fidelity print-to-PDF layout stylesheet'
+    ],
+    architecture: 'Next.js application utilizing React state reducers for atomic field updates, CSS paged media modules for exact millimeter A4 print reproduction, and client-side persistence.',
+    result: 'Empowers users to generate clean, ATS-compliant, beautifully styled resumes in minutes with zero subscription barriers.',
+    challenges: 'Enforcing strict pagination boundaries to prevent awkward page splits across dynamic text blocks during print generation.',
+    liveUrl: 'https://aima-cvforge.vercel.app/',
+    githubUrl: 'https://github.com/msaymaaa',
+    statusText: 'Live Deployment'
+  },
+  {
+    id: 'enterprise-cybersecurity-lab',
+    slug: 'enterprise-cybersecurity-lab',
+    number: '04',
+    title: 'ENTERPRISE CYBERSECURITY LABORATORY — Network Security Assessment & Incident Response',
+    shortDescription: 'Contributed to the design and assessment of an enterprise cybersecurity laboratory environment focused on network security monitoring, vulnerability assessment, and incident-response workflows.',
+    category: 'Cybersecurity',
+    year: '2026',
+    problem: 'Critical infrastructure and UAV enterprise networks face complex attack vectors requiring rigorous sandbox simulation, active penetration testing, and structured incident response procedures.',
+    targetUser: 'Enterprise defense teams, systems engineers, and UAV ground-station network operators.',
+    role: 'Cybersecurity Analyst & Lab Investigator — Security assessment, vulnerability analysis, and incident response.',
+    tools: ['NRTC — UAV Department | 2026', 'Kali Linux', 'Burp Suite', 'SQLMap', 'DVWA', 'Network Security'],
+    importantFeatures: [
+      'Contributed to the design and assessment of an enterprise cybersecurity laboratory environment focused on network security monitoring, vulnerability assessment, and incident-response workflows.',
+      'Performed practical network and web security assessments to identify potential vulnerabilities, analyze attack surfaces, and evaluate security controls.',
+      'Worked with cybersecurity tools and controlled environments to support vulnerability analysis, traffic investigation, security testing, and incident-response exercises.',
+      'Documented technical observations, assessment findings, and security considerations to support a structured approach to enterprise network defense and incident response.'
+    ],
+    architecture: 'Isolated virtualized laboratory environment simulating enterprise network perimeters, UAV telemetry nodes, and web endpoints with controlled penetration testing and traffic analysis.',
+    result: 'Established validated defense baseline, actionable vulnerability remediation roadmaps, and documented incident response exercises.',
+    challenges: 'Balancing simulated attack realism across web and network layers while maintaining isolated laboratory network integrity.',
+    statusText: 'NRTC — UAV Department | 2026'
+  },
+  {
+    id: 'automated-appointment-system',
+    slug: 'automated-appointment-system',
+    number: '05',
+    title: 'Automated Appointment Booking & Calendar System',
+    shortDescription: 'Intelligent scheduling automation pipeline designed to streamline client appointment bookings, calendar synchronization, and automated confirmation routing.',
+    category: 'Automation & AI',
+    year: '2025',
+    problem: 'Manual client scheduling creates double-booking risks, delayed confirmation responses, and unnecessary administrative overhead.',
+    targetUser: 'Consultancies, technology firms, executive teams, and client-facing business units.',
+    role: 'Automation Architect — Workflow design, OAuth integration, and exception handling logic.',
+    tools: ['n8n', 'Make.com', 'Google Calendar API', 'Gmail API', 'REST Webhooks'],
+    importantFeatures: [
+      'Automated multi-channel workflow to capture, validate, and process incoming appointment requests seamlessly',
+      'Real-time bi-directional Google Calendar integration preventing double-booking across dynamic time zones',
+      'Automated branded confirmation and reminder emails with calendar invite attachments via Gmail API',
+      'Automated rescheduling and cancellation webhooks with instant calendar slot re-release'
+    ],
+    architecture: 'Event-driven webhook listener triggering n8n/Make automation graph with conditional branching, RFC 5545 iCalendar payload generation, and OAuth 2.0 token management.',
+    result: 'Reduced manual appointment scheduling latency by 95% while eliminating calendar scheduling conflicts entirely.',
+    challenges: 'Handling edge-case timezone shifts and concurrent booking race conditions across asynchronous webhook triggers.',
+    statusText: 'Active Pipeline'
+  },
+  {
+    id: 'google-drive-media-pipeline',
+    slug: 'google-drive-media-pipeline',
+    number: '06',
+    title: 'Automated Google Drive Media Ingestion Pipeline',
+    shortDescription: 'Automated data-handling pipeline to capture, process, metadata-tag, and securely store media assets directly into cloud storage without manual uploading.',
+    category: 'Automation & AI',
+    year: '2025',
+    problem: 'Media and technical asset management requires repetitive manual downloading, renaming, and folder routing that leads to lost files and unstructured storage.',
+    targetUser: 'Digital media teams, research laboratories, and engineering documentation operations.',
+    role: 'Pipeline Engineer — Data ingestion, file hashing, and cloud storage automation.',
+    tools: ['n8n', 'Make.com', 'Google Drive API', 'Cloud Storage Webhooks', 'REST APIs'],
+    importantFeatures: [
+      'Automated ingestion trigger capturing media attachments from intake forms, webhooks, and secure FTP drops',
+      'Dynamic file naming conventions, timestamping, and hierarchical directory sorting on Google Drive',
+      'Duplicate detection via file size and checksum verification prior to storage commitment',
+      'Automated sharing permission generation and structured notification dispatch to project channels'
+    ],
+    architecture: 'Microservice automation pipeline utilizing streaming HTTP buffers, chunked Google Drive multipart upload endpoints, and asynchronous error retry queues.',
+    result: 'Completely eliminated manual media file handling steps, organizing thousands of inbound assets into structured cloud archives.',
+    challenges: 'Streaming large binary files through serverless automation node memory constraints without memory exhaustion.',
+    statusText: 'Active Pipeline'
+  },
+  {
+    id: 'ai-brand-research-pipeline',
+    slug: 'ai-brand-research-pipeline',
+    number: '07',
+    title: 'AI-Powered Brand Research & Analysis Pipeline',
+    shortDescription: 'Advanced intelligence pipeline utilizing Large Language Models to automate comprehensive brand research, competitor analysis, and market insights generation.',
+    category: 'Automation & AI',
+    year: '2025',
+    problem: 'Manual market and competitor research takes dozens of hours per prospect and produces inconsistent unstructured notes.',
+    targetUser: 'Business development teams, strategy consultants, and product marketing managers.',
+    role: 'AI & Automation Engineer — Multi-step prompt architecture, JSON schema enforcement, and document output generation.',
+    tools: ['n8n', 'Make.com', 'OpenAI API', 'Gemini API', 'Google Sheets API', 'Google Docs API'],
+    importantFeatures: [
+      'Multi-step web extraction feeding raw domain data into curated LLM analysis prompts',
+      'Automated extraction of brand value propositions, target verticals, executive leadership, and competitive weaknesses',
+      'Deterministic JSON output formatting ensuring reliable data ingestion into Google Sheets matrices',
+      'Automated briefing dossier generation compiling executive summaries into formatted Google Docs'
+    ],
+    architecture: 'Multi-agent sequential execution pipeline combining web scrapers, LLM semantic synthesis prompts with strict Pydantic/JSON schemas, and automated document generation APIs.',
+    result: 'Accelerated market intelligence briefing turnaround from 4 hours down to under 90 seconds per organization.',
+    challenges: 'Minimizing LLM hallucination on niche private companies through constrained system prompts and source cross-validation.',
+    statusText: 'Active Pipeline'
+  }
+];
