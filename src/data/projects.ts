@@ -167,5 +167,36 @@ export const projects: Project[] = [
     result: 'Accelerated market intelligence briefing turnaround from 4 hours down to under 90 seconds per organization.',
     challenges: 'Minimizing LLM hallucination on niche private companies through constrained system prompts and source cross-validation.',
     statusText: 'Active Pipeline'
+  },
+  {
+    id: 'leadtoquote',
+    slug: 'leadtoquote',
+    number: '08',
+    title: 'LeadToQuote',
+    shortDescription: 'Full-stack service management platform streamlining the complete workflow from customer inquiries and quotations to approval, technician dispatch, work completion, invoicing, and payment settlement.',
+    category: 'Full-Stack',
+    categoryDisplay: 'Full-Stack Service Management Platform',
+    liveButtonText: 'View Live',
+    year: '2026',
+    problem: 'Service businesses struggle with fragmented inquiries, delayed quotation turnaround, uncoordinated technician dispatch, lack of photographic work evidence, and disconnected invoicing across manual spreadsheets without role security.',
+    targetUser: 'Service business owners, administrative staff, field service technicians, and residential or commercial clients.',
+    role: 'Full-Stack Software Engineer — Relational database architecture, Supabase authentication, PostgreSQL Row Level Security (RLS) policies, and role-based operational workflows.',
+    tools: ['React', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Supabase Auth', 'Row Level Security (RLS)', 'Tailwind CSS', 'PKR Financials'],
+    importantFeatures: [
+      'Lead and customer inquiry intake with structured service requests and contact capture',
+      'Professional quotation creation with itemized pricing, discounts, and customer approval/decline workflow',
+      'Multi-tenant role-based access control (RBAC) with protected workspaces for Owner, Staff, Field Technician, and Customer',
+      'Technician onboarding, verification, dispatch management, and work order assignment tracking',
+      'Field execution tracking with upload and display of work evidence and completion photos',
+      'Itemized invoice generation, settlement tracking, and localized Pakistani Rupee (PKR / ₨) financial support',
+      'Live Supabase PostgreSQL database integration with real-time updates and strict Row Level Security (RLS)',
+      'Search, sorting, filtering, KPI analytics dashboards, and responsive desktop, tablet, and mobile interface'
+    ],
+    architecture: 'Production full-stack single-page application built with React, TypeScript, and Vite, backed by Supabase and a relational PostgreSQL database. Utilizes Supabase Authentication, PostgreSQL Row Level Security (RLS) policies to enforce multi-tenant and role-based data boundary isolation, protected client routes, persistent CRUD state management, and production environment security configurations.',
+    result: 'Transforms fragmented service business operations into a unified, authenticated, end-to-end platform with live persistence, role-isolated views, and real-time operational visibility from initial inquiry to final payment.',
+    challenges: 'Designing complex Row Level Security (RLS) policies and relational schemas in PostgreSQL to enforce distinct operational boundaries across four concurrent user roles (Owner, Staff, Technician, Customer) without performance bottlenecks.',
+    liveUrl: 'https://lead2quote.vercel.app/',
+    githubUrl: 'https://github.com/msaymaaa',
+    statusText: 'Production Deployment'
   }
 ];

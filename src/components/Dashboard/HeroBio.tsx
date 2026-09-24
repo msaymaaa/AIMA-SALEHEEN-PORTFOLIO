@@ -16,6 +16,7 @@ import {
   Radio,
   FileText
 } from 'lucide-react';
+import { projects } from '../../data/projects';
 
 interface HeroBioProps {
   onNavigateSection: (sectionId: string) => void;
@@ -161,7 +162,7 @@ export function HeroBio({ onNavigateSection, onCursorChange }: HeroBioProps) {
               onMouseLeave={() => onCursorChange('default')}
               className="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold font-mono text-xs flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]"
             >
-              <span>View Projects (7)</span>
+              <span>View Projects ({projects.length})</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
 

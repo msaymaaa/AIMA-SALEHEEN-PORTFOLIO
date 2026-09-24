@@ -5,6 +5,8 @@ export interface Project {
   title: string;
   shortDescription: string;
   category: 'Full-Stack' | 'AI & Web' | 'Application' | 'Systems & Games' | 'Cybersecurity' | 'Automation & AI';
+  categoryDisplay?: string;
+  liveButtonText?: string;
   year: string;
   problem: string;
   targetUser: string;

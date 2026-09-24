@@ -78,7 +78,7 @@ export function CommandPaletteModal({
     {
       id: 'nav-projects',
       title: 'Go to Featured Projects',
-      subtitle: '7 Case studies: Highway Havoc, MentorNexus, CVForge, Cyber Lab...',
+      subtitle: '8 Case studies: LeadToQuote, Highway Havoc, MentorNexus, CVForge...',
       category: 'Navigation',
       icon: FolderGit2,
       action: () => {
@@ -210,6 +210,17 @@ export function CommandPaletteModal({
       icon: ExternalLink,
       action: () => {
         window.open('https://highway-havoc.vercel.app/', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'act-leadtoquote',
+      title: 'Open LeadToQuote Live Platform',
+      subtitle: 'https://lead2quote.vercel.app/',
+      category: 'Projects',
+      icon: ExternalLink,
+      action: () => {
+        window.open('https://lead2quote.vercel.app/', '_blank');
         onClose();
       },
     },

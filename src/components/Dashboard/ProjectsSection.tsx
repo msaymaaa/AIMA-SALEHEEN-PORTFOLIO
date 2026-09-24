@@ -36,7 +36,7 @@ export function ProjectsSection({ onCursorChange }: ProjectsSectionProps) {
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-sky-400 mb-2">
             <FolderGit2 className="w-4 h-4" />
-            <span className="tracking-widest uppercase">01 // PRODUCTION WORK & CASE STUDIES (07)</span>
+            <span className="tracking-widest uppercase">01 // PRODUCTION WORK & CASE STUDIES ({String(projects.length).padStart(2, '0')})</span>
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
             Featured Projects<span className="text-sky-400">.</span>
@@ -82,7 +82,7 @@ export function ProjectsSection({ onCursorChange }: ProjectsSectionProps) {
                   PROJECT {project.number}
                 </span>
                 <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-[11px] text-slate-300">
-                  {project.category}
+                  {project.categoryDisplay || project.category}
                 </span>
               </div>
 
@@ -171,7 +171,7 @@ export function ProjectsSection({ onCursorChange }: ProjectsSectionProps) {
                     className="px-3.5 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold flex items-center gap-1.5 transition-all shadow-[0_0_15px_rgba(56,189,248,0.3)] hover:shadow-[0_0_25px_rgba(56,189,248,0.5)]"
                     title={`Open Live ${project.title}`}
                   >
-                    <span>{project.id === 'highway-havoc' ? 'Play Game' : 'Live Demo'}</span>
+                    <span>{project.liveButtonText || (project.id === 'highway-havoc' ? 'Play Game' : 'Live Demo')}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
@@ -202,7 +202,7 @@ export function ProjectsSection({ onCursorChange }: ProjectsSectionProps) {
             <div className="space-y-3 border-b border-white/5 pb-6">
               <div className="flex items-center gap-3 text-xs font-mono text-sky-400">
                 <span className="font-bold uppercase tracking-wider">
-                  PROJECT {activeModalProject.number} // {activeModalProject.category}
+                  PROJECT {activeModalProject.number} // {activeModalProject.categoryDisplay || activeModalProject.category}
                 </span>
                 <span>•</span>
                 <span className="text-slate-400">{activeModalProject.year}</span>
@@ -316,7 +316,7 @@ export function ProjectsSection({ onCursorChange }: ProjectsSectionProps) {
                     rel="noreferrer"
                     className="px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)]"
                   >
-                    <span>Launch Live App</span>
+                    <span>{activeModalProject.liveButtonText ? (activeModalProject.liveButtonText === 'View Live' ? 'View Live App' : activeModalProject.liveButtonText) : 'Launch Live App'}</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
